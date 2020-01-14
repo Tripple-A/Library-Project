@@ -1,5 +1,6 @@
 let myLibrary = [];
 let table = document.getElementById('myTable')
+let bookForm = document.forms['bookForm']
 
 function Book(title,author,pages,status) {
   this.title = title
@@ -9,19 +10,25 @@ function Book(title,author,pages,status) {
 }
 
 function createBook(){
-    let bookForm = document.forms['bookForm']
     let title = bookForm['bookTitle'].value
     let author = bookForm['bookAuthor'].value
     let pages = bookForm['bookPages'].value
     let status = bookForm['bookStatus'].value
     let myBook = new Book(title,author,pages,status)
-    addBookToLibrary(myBook)   
+    addBookToLibrary(myBook) 
+    clearForm()  
 }
 
 function addBookToLibrary(book) {
-    
-    myLibrary.push(book)
+     myLibrary.push(book)
+     clearTable()
+     showBooks()
+}
 
+function clearForm(){
+    bookForm['bookTitle'].value = ''
+    bookForm['bookAuthor'].value = ''
+    bookForm['bookPages'].value = ''
 }
 
 function showBooks(){
@@ -66,6 +73,14 @@ if (button.innerHTML == 'read'){button.style.background = 'green'}
 else {button.style.background = 'red'}
 }
 
+function clearTable(){
+    if(table.rows.length > 1){
+        for(let i=table.rows.length - 1; i>0;i--){
+            table.deleteRow(i)
+        }
+    }
+}
+
 function removeBook(){
     let num = parseInt(this.id)
     table.deleteRow(num + 1) 
@@ -84,4 +99,3 @@ book4 = new Book('The Ruby','Sarah','455','Unread')
 addBookToLibrary(book4)
 book5 = new Book('The Dear','Biodun Ajibade','457','read')
 addBookToLibrary(book5)
-showBooks()

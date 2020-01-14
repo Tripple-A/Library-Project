@@ -1,6 +1,8 @@
 let myLibrary = [];
 let table = document.getElementById('myTable')
 let bookForm = document.forms['bookForm']
+bookForm.style.display = 'none'
+
 
 function Book(title,author,pages,status) {
   this.title = title
@@ -17,21 +19,27 @@ function createBook(){
     let myBook = new Book(title,author,pages,status)
     addBookToLibrary(myBook) 
     clearForm()  
+    bookForm.style.display = 'none'
 }
 
 function addBookToLibrary(book) {
      myLibrary.push(book)
      clearTable()
-     showBooks()
+     render()
 }
 
 function clearForm(){
     bookForm['bookTitle'].value = ''
     bookForm['bookAuthor'].value = ''
     bookForm['bookPages'].value = ''
+    bookForm['bookStatus'].value = 'read'
 }
 
-function showBooks(){
+function showForm(){
+    bookForm.style.display = 'block'
+}
+
+function render(){
     myLibrary.forEach((book,index)=>{
     let button1 = document.createElement('button');
     let button2 = document.createElement('button');
@@ -86,7 +94,7 @@ function removeBook(){
     table.deleteRow(num + 1) 
     myLibrary.splice(num,1)
     clearTable()
-    showBooks()
+    render()
 }
 
 book1 = new Book('The Dear','Biodun Ajibade','456','read')

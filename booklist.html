@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="booklist.css">
     <title>BookList</title>
 </head>
 <body>
@@ -21,10 +22,11 @@
             <option value="Unread"> Unread </option>
         </select>
         <br><br>
+        <button onclick="createBook()"> Add Book</button>
            </form> 
-            <button onclick="createBook()"> Add Book</button>
+            
     <h3>This is a list of the books in your library</h3>
-   
+   <button onclick="showForm()"> NEW BOOK</button>
     <table id="myTable">
         
             <div class="heading">

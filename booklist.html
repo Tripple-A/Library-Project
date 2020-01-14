@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BookList</title>
+</head>
+<body>
+
+    <form action="#" name='bookForm' id = 'bookForm'>
+        Title of Book:
+        <input type="text" name="bookTitle" id="bookTitle"> <br><br>
+        Author of Book:
+        <input type="text" name='bookAuthor' id = 'bookAuthor'> <br><br>
+        Number of Pages:
+        <input type="integer" name='bookPages'> <br> <br>
+        Status:
+        <select name="bookStatus" id="bookStatus"> 
+            <option value="read"> Read </option>
+            <option value="Unread"> Unread </option>
+        </select>
+        <br><br>
+           </form> 
+            <button onclick="createBook()"> Add Book</button>
+    <h3>This is a list of the books in your library</h3>
+   
+    <table id="myTable">
+        
+            <div class="heading">
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>No Of Pages</th>
+                    <th>Status</th>
+                    <th>Edit Table</th>
+                </tr>
+            </div>
+        
+        
+    </table>
+    <script src="library.js"></script>
+</body>
+</html>

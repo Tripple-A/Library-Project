@@ -74,4 +74,14 @@ function removeBook(){
     showBooks()
 }
 
+book1 = new Book('The Dear','Biodun Ajibade','456','read')
+addBookToLibrary(book1)
+book2 = new Book('JavaSCript', 'Micheal','230','Unread')
+addBookToLibrary(book2)
+book3 = new Book('The Rails','Rama','458','read')
+addBookToLibrary(book3)
+book4 = new Book('The Ruby','Sarah','455','Unread')
+addBookToLibrary(book4)
+book5 = new Book('The Dear','Biodun Ajibade','457','read')
+addBookToLibrary(book5)
 showBooks()

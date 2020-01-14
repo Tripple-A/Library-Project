@@ -1,6 +1,9 @@
+body{
+    text-align: center;
+}
+
 table {
     border-collapse: collapse;
-    text-align: center;
     margin: 0px auto;
    
   }
@@ -8,4 +11,32 @@ table {
   table, th, td {
     border: 1px solid black;
     padding: 10px;
+  }
+
+  th{
+      background-color: goldenrod;
+  }
+
+  h2,h3{
+      font-family: cursive;
+  }
+
+  h2{
+      color: peru
+  }
+  h3{
+      color: brown
+  }
+
+  .newbook{
+      margin-bottom: 10px;
+      background-color:  orange
+  }
+
+  form{
+      background-color: palegreen;
+      width:30%;
+      margin: 0px auto;
+      padding-top:10px;
+      margin-bottom: 10px;
   }

@@ -8,7 +8,9 @@
     <title>BookList</title>
 </head>
 <body>
-
+    <h2>WELCOME TO YOUR LIBRARY</h2>
+    <h3>This is a list of the books in your library</h3>
+   <button class='newbook' onclick="showForm()"> NEW BOOK</button>
     <form action="#" name='bookForm' id = 'bookForm'>
         Title of Book:
         <input type="text" name="bookTitle" id="bookTitle"> <br><br>
@@ -22,11 +24,10 @@
             <option value="Unread"> Unread </option>
         </select>
         <br><br>
-        <button onclick="createBook()"> Add Book</button>
+        <button class='newbook' onclick="createBook()"> Add Book</button>
            </form> 
-            
-    <h3>This is a list of the books in your library</h3>
-   <button onclick="showForm()"> NEW BOOK</button>
+    
+           
     <table id="myTable">
         
             <div class="heading">

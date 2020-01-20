@@ -11,33 +11,33 @@ function Book(title, author, pages, status) {
   this.status = status;
 }
 
-function createBook() {
-  const title = bookForm.bookTitle.value;
-  const author = bookForm.bookAuthor.value;
-  const pages = bookForm.bookPages.value;
-  const status = bookForm.bookStatus.value;
-  const myBook = new Book(title, author, pages, status);
-  addBookToLibrary(myBook);
-  clearForm();
-  bookForm.style.display = 'none';
+
+function setColor(button) {
+  if (button.innerHTML === 'read') {
+    button.style.background = 'green';
+  } else {
+    button.style.background = 'red';
+  }
 }
 
-function addBookToLibrary(book) {
-  myLibrary.push(book);
-  clearTable();
-  render();
+function toggleStatus() {
+  if (this.innerHTML === 'read') {
+    this.innerHTML = 'Unread';
+    this.style.background = 'red';
+  } else {
+    this.innerHTML = 'read';
+    this.style.background = 'green';
+  }
 }
 
-function clearForm() {
-  bookForm.bookTitle.value = '';
-  bookForm.bookAuthor.value = '';
-  bookForm.bookPages.value = '';
-  bookForm.bookStatus.value = 'read';
+function clearTable() {
+  if (table.rows.length > 1) {
+    for (let i = table.rows.length - 1; i > 0; i -= 1) {
+      table.deleteRow(i);
+    }
+  }
 }
 
-function showForm() {
-  bookForm.style.display = 'block';
-}
 
 function render() {
   myLibrary.forEach((book, index) => {
@@ -64,29 +64,6 @@ function render() {
   });
 }
 
-
-function toggleStatus() {
-  if (this.innerHTML == 'read') {
-    this.innerHTML = 'Unread';
-    this.style.background = 'red';
-  } else {
-    this.innerHTML = 'read';
-    this.style.background = 'green';
-  }
-}
-
-function setColor(button) {
-  if (button.innerHTML == 'read') { button.style.background = 'green'; } else { button.style.background = 'red'; }
-}
-
-function clearTable() {
-  if (table.rows.length > 1) {
-    for (let i = table.rows.length - 1; i > 0; i--) {
-      table.deleteRow(i);
-    }
-  }
-}
-
 function removeBook() {
   const num = parseInt(this.id);
   table.deleteRow(num + 1);
@@ -95,13 +72,43 @@ function removeBook() {
   render();
 }
 
-book1 = new Book('The Dear', 'Biodun Ajibade', '456', 'read');
+function addBookToLibrary(book) {
+  myLibrary.push(book);
+  clearTable();
+  render();
+}
+
+
+function createBook() {
+  const title = bookForm.bookTitle.value;
+  const author = bookForm.bookAuthor.value;
+  const pages = bookForm.bookPages.value;
+  const status = bookForm.bookStatus.value;
+  const myBook = new Book(title, author, pages, status);
+  addBookToLibrary(myBook);
+  clearForm();
+  bookForm.style.display = 'none';
+}
+
+function clearForm() {
+  bookForm.bookTitle.value = '';
+  bookForm.bookAuthor.value = '';
+  bookForm.bookPages.value = '';
+  bookForm.bookStatus.value = 'read';
+}
+
+function showForm() {
+  bookForm.style.display = 'block';
+}
+
+
+const book1 = new Book('The Dear', 'Biodun Ajibade', '456', 'read');
 addBookToLibrary(book1);
-book2 = new Book('JavaSCript', 'Micheal', '230', 'Unread');
+const book2 = new Book('JavaSCript', 'Micheal', '230', 'Unread');
 addBookToLibrary(book2);
-book3 = new Book('The Rails', 'Rama', '458', 'read');
+const book3 = new Book('The Rails', 'Rama', '458', 'read');
 addBookToLibrary(book3);
-book4 = new Book('The Ruby', 'Sarah', '455', 'Unread');
+const book4 = new Book('The Ruby', 'Sarah', '455', 'Unread');
 addBookToLibrary(book4);
-book5 = new Book('The Dear', 'Biodun Ajibade', '457', 'read');
+const book5 = new Book('The Dear', 'Biodun Ajibade', '457', 'read');
 addBookToLibrary(book5);

@@ -38,18 +38,17 @@ function clearTable() {
   }
 }
 
-/*eslint-disable */
 function render() {
   myLibrary.forEach((book, index) => {
     const button1 = document.createElement('button');
     const button2 = document.createElement('button');
     button2.setAttribute('id', index);
+    button2.setAttribute('class', 'index');
     button1.setAttribute('class', 'status');
     button1.innerHTML = book.status;
     button2.innerHTML = 'Delete Book';
     setColor(button1);
     button1.addEventListener('click', toggleStatus);
-    button2.addEventListener('click', removeBook);
     const row = table.insertRow(index + 1);
     const cell1 = row.insertCell(0);
     const cell2 = row.insertCell(1);
@@ -70,12 +69,22 @@ function removeBook() {
   myLibrary.splice(num, 1);
   clearTable();
   render();
+  document.querySelectorAll('.index').forEach(btn => {
+    btn.onclick = removeBook;
+  });
+}
+
+function remove() {
+  document.querySelectorAll('.index').forEach(btn => {
+    btn.onclick = removeBook;
+  });
 }
 
 function addBookToLibrary(book) {
   myLibrary.push(book);
   clearTable();
   render();
+  remove();
 }
 
 
@@ -84,6 +93,7 @@ function clearForm() {
   bookForm.bookAuthor.value = '';
   bookForm.bookPages.value = '';
   bookForm.bookStatus.value = 'read';
+  bookForm.style.display = 'none';
 }
 
 function createBook() {
@@ -96,12 +106,14 @@ function createBook() {
   clearForm();
   bookForm.style.display = 'none';
 }
-/*eslint-disable */
 
 function showForm() {
   bookForm.style.display = 'block';
 }
 
+document.querySelector('.newbook').onclick = showForm;
+document.querySelector('.createbook').onclick = createBook;
+document.querySelector('.cancelform').onclick = clearForm;
 
 const book1 = new Book('The Dear', 'Biodun Ajibade', '456', 'read');
 addBookToLibrary(book1);

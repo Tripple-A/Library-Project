@@ -38,7 +38,7 @@ function clearTable() {
   }
 }
 
-
+/*eslint-disable */
 function render() {
   myLibrary.forEach((book, index) => {
     const button1 = document.createElement('button');
@@ -65,7 +65,7 @@ function render() {
 }
 
 function removeBook() {
-  const num = parseInt(this.id);
+  const num = parseInt(this.id, 0);
   table.deleteRow(num + 1);
   myLibrary.splice(num, 1);
   clearTable();
@@ -79,6 +79,13 @@ function addBookToLibrary(book) {
 }
 
 
+function clearForm() {
+  bookForm.bookTitle.value = '';
+  bookForm.bookAuthor.value = '';
+  bookForm.bookPages.value = '';
+  bookForm.bookStatus.value = 'read';
+}
+
 function createBook() {
   const title = bookForm.bookTitle.value;
   const author = bookForm.bookAuthor.value;
@@ -89,13 +96,7 @@ function createBook() {
   clearForm();
   bookForm.style.display = 'none';
 }
-
-function clearForm() {
-  bookForm.bookTitle.value = '';
-  bookForm.bookAuthor.value = '';
-  bookForm.bookPages.value = '';
-  bookForm.bookStatus.value = 'read';
-}
+/*eslint-disable */
 
 function showForm() {
   bookForm.style.display = 'block';

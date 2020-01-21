@@ -11,20 +11,20 @@
     <h2>WELCOME TO YOUR LIBRARY</h2>
     <h3>This is a list of the books in your library</h3>
    <button class='newbook'> NEW BOOK</button>
-    <form action="#" name='bookForm' id = 'bookForm'>
+    <form name='bookForm' id = 'bookForm'>
         Title of Book:
-        <input type="text" name="bookTitle" id="bookTitle"> <br><br>
+        <input type="text" name="bookTitle" id="bookTitle" required> <br><br>
         Author of Book:
-        <input type="text" name='bookAuthor' id = 'bookAuthor'> <br><br>
+        <input type="text" name='bookAuthor' id = 'bookAuthor' required> <br><br>
         Number of Pages:
-        <input type="integer" name='bookPages'> <br> <br>
+        <input type="number" name='bookPages' required> <br> <br>
         Status:
         <select name="bookStatus" id="bookStatus"> 
             <option value="read"> Read </option>
             <option value="Unread"> Unread </option>
         </select>
         <br><br>
-        <button class='createbook'> Add Book</button>
+        <button class='createbook' type="submit"> Add Book</button>
         <button class = 'cancelform'>Cancel</button>
            </form> 
     
@@ -43,6 +43,11 @@
         
         
     </table>
+    <form>
+        
+  <input required>
+  <button>add</button>
+    </form>
     <script src="library.js"></script>
 </body>
 </html>

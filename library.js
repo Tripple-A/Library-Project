@@ -101,10 +101,13 @@ function createBook() {
   const author = bookForm.bookAuthor.value;
   const pages = bookForm.bookPages.value;
   const status = bookForm.bookStatus.value;
-  const myBook = new Book(title, author, pages, status);
-  addBookToLibrary(myBook);
-  clearForm();
-  bookForm.style.display = 'none';
+  const validator = document.querySelector('h4');
+  if (title.length === 0 || author.length === 0 || pages.length === 0) { validator.style.display = 'block'; } else {
+    const myBook = new Book(title, author, pages, status);
+    addBookToLibrary(myBook);
+    clearForm();
+    bookForm.style.display = 'none';
+  }
 }
 
 function showForm() {

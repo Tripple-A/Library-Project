@@ -1,0 +1,29 @@
+{
+  "name": "mv_library",
+  "version": "1.0.0",
+  "description": "This is a Javascript project aimed at building a library where one can add and delete books and constantly update the library",
+  "main": "library.js",
+  "dependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.20.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1",
+    "stylelint": "^13.0.0",
+    "stylelint-config-standard": "^19.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tripple-A/Library-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tripple-A/Library-Project/issues"
+  },
+  "homepage": "https://github.com/Tripple-A/Library-Project#readme"
+}

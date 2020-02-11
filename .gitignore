@@ -1,0 +1,4 @@
+node_modules/
+.vscode
+stylelint.config.js
+.stylelintrc.json

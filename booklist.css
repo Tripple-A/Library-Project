@@ -1,0 +1,58 @@
+body {
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+th {
+  background-color: goldenrod;
+}
+
+h2,
+h3 {
+  font-family: cursive;
+}
+
+h2 {
+  color: peru;
+}
+
+h3 {
+  color: brown;
+}
+
+.newbook {
+  margin-bottom: 10px;
+  background-color: orange;
+}
+
+form {
+  background-color: palegreen;
+  width: 30%;
+  margin: 0 auto;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
+.createbook {
+  background-color: green;
+}
+
+.cancelform {
+  background-color: red;
+}
+
+h4 {
+  display: none;
+  color: red;
+}

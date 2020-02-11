@@ -7,9 +7,9 @@
 * [Ajibade Abiodun](https://github.com/Tripple-A)
 
 ### Project Goal
-Design a small library app 
+Design a small library app where owners can add books,delete books and toggle the status of their books to rither read or unread
 
-### Project Achieved
-* Changes/updates to the DOM are low.
+### Project Design
+* Vanilla Javascript is employed here (ES6)
 * Application logic is separated from DOM manipulation tasks.
 * All the styling logic is in CSS files.
